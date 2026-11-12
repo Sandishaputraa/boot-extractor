@@ -8,7 +8,7 @@ jobs:
     steps:
       - name: Download & Extract Boot Image
         run: |
-          wget -qO- "https://bkt-sgp-miui-ota-update-alisgp.oss-ap-southeast-1.aliyuncs.com/OS3.0.307.0.WNFMIXM/emerald_global_images_OS3.0.307.0.WNFMIXM_20260917.0000.00_16.0_global_1727723236.tgz" | tar -xvzf - --wildcards '*/images/boot.img' '*/images/vbmeta.img'
+          wget -qO- "https://bkt-sgp-miui-ota-update-alisgp.oss-ap-southeast-1.aliyuncs.com/OS3.0.307.0.WNFMIXM/emerald_global_images_OS3.0.307.0.WNFMIXM_20260917.0000.00_16.0_global_1727723236.tgz" | tar -xvzf - --wildcards '*/images/boot.img' '*/images/vbmeta.img' '*/images/vendor_boot.img'
           mkdir output
           find . -name "boot.img" -exec mv {} output/ \;
           find . -name "vbmeta.img" -exec mv {} output/ \;
@@ -19,3 +19,4 @@ jobs:
         with:
           name: emerald-boot-files
           path: output/
+          
