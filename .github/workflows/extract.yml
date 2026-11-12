@@ -12,6 +12,7 @@ jobs:
           mkdir output
           find . -name "boot.img" -exec mv {} output/ \;
           find . -name "vbmeta.img" -exec mv {} output/ \;
+          find . -name "vendor_boot.img" -exec mv {} output/ \;
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
